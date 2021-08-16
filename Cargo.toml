@@ -1,5 +1,6 @@
 [package]
 authors = ["Andrei Sousa <sousandrei@gmail.com>"]
+description = "handy git-hook and cli for conventional commits"
 edition = "2018"
 keywords = ["git", "cli", "conventional-commits", "conventional", "commits"]
 license-file = "LICENSE"
