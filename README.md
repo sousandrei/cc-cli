@@ -1,6 +1,6 @@
 # cc-cli
 
-## Conventional Commits cli
+**Conventional Commits hook and cli**
 
 [![Build Status](https://img.shields.io/github/checks-status/sousandrei/cc-cli/main?style=flat-square)](https://github.com/sousandrei/cc-cli/actions)
 [![crates.io version](https://img.shields.io/crates/v/cc-cli.svg?style=flat-square)](https://crates.io/crates/cc-cli)
