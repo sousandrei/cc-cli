@@ -8,7 +8,6 @@ use std::{
     process::{Command, Output},
 };
 
-#[cfg(target_os = "linux")]
 const PERMISSIONS: u32 = 0o775;
 const FILENAME: &str = "prepare-commit-msg";
 const CONTENTS: &str = "#!/bin/sh
