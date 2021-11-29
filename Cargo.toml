@@ -7,9 +7,9 @@ license-file = "LICENSE"
 name = "cc-cli"
 readme = "README.md"
 repository = "https://github.com/sousandrei/cc-cli"
-version = "0.1.1"
+version = "0.1.2"
 
 [dependencies]
-anyhow = "1.0.43"
-argh = "0.1.5"
-inquire = "0.0.6"
+anyhow = "1.0.50"
+argh = "0.1.6"
+inquire = "0.2.1"

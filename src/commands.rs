@@ -9,7 +9,7 @@ pub mod commit;
 pub mod hook;
 
 pub fn prompt() -> Result<String> {
-    let commit_type = Select::new("What is the commit type?", &ITEMS).prompt()?;
+    let commit_type = Select::new("What is the commit type?", ITEMS.to_vec()).prompt()?;
 
     let mut scope = Text::new("What is the commit scope?")
         .with_validator(max_length!(15, "Maximum of 15 characters"))
