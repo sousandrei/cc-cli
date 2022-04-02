@@ -11,5 +11,5 @@ version = "0.1.2"
 
 [dependencies]
 anyhow = "1.0.50"
-argh = "0.1.6"
+argh = "0.1.7"
 inquire = "0.2.1"
