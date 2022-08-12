@@ -10,6 +10,6 @@ repository = "https://github.com/sousandrei/cc-cli"
 version = "0.1.2"
 
 [dependencies]
-anyhow = "1.0.58"
+anyhow = "1.0.61"
 argh = "0.1.7"
 inquire = "0.2.1"
