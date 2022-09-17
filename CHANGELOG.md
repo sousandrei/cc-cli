@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/sousandrei/cc-cli/compare/v0.1.2...v0.2.0) (2022-09-17)
+
+
+### Features
+
+* add dependabot ([3f46dc3](https://github.com/sousandrei/cc-cli/commit/3f46dc3b59b39137338d1e9600ff81a3f2df9556))
+
 ### [0.1.1](https://github.com/sousandrei/cc-cli/compare/v0.1.0...v0.1.1) (2021-08-16)
 
 
