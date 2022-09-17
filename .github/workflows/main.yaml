@@ -3,46 +3,72 @@ name: Main
 on:
   push:
     branches:
-      - "main"
+      - main
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  ci:
+  main:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        rust:
-          - stable
-          - beta
-          - nightly
+    permissions:
+      issues: write
+      contents: write
+      packages: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions-rs/toolchain@v1
-        name: installing toolchain
+        name: Installing Rust Toolchain
         with:
           profile: default
-          toolchain: ${{ matrix.rust }}
+          toolchain: stable
           override: true
           components: rustfmt, clippy
 
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2.0.0
+
       - uses: actions-rs/cargo@v1
-        name: fmt
+        name: Cargo Fmt
         with:
           command: fmt
           args: --all -- --check
 
-      - uses: actions-rs/clippy-check@v1
+      - uses: actions-rs/cargo@v1
+        name: Cargo Clippy
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          args: -- -D warnings
+          command: clippy
+          args: --release -- -D warnings
 
       - uses: actions-rs/cargo@v1
-        name: build
+        name: Cargo Build
         with:
           command: build
           args: --release
+
+      - uses: google-github-actions/release-please-action@v3
+        name: Release
+        id: release
+        with:
+          release-type: rust
+          package-name: fikabot
+
+      - name: Install Task
+        uses: arduino/setup-task@v1
+        if: steps.release.outputs.release_created
+
+      - name: Log in to GitHub Container registry
+        uses: docker/login-action@v2.0.0
+        if: steps.release.outputs.release_created
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Package
+        if: steps.release.outputs.release_created
+        run: task release TAG=${{ steps.release.outputs.tag_name }}
