@@ -55,4 +55,4 @@ jobs:
         id: release
         with:
           release-type: rust
-          package-name: fikabot
+          package-name: cc-cli
