@@ -21,7 +21,7 @@ pub fn get_git_absolute_path() -> Result<String> {
         stdout,
         stderr,
     } = Command::new("git")
-        .args(&["rev-parse", "--absolute-git-dir"])
+        .args(["rev-parse", "--absolute-git-dir"])
         .output()
         .expect("Failed run git rev-parse");
 

@@ -27,7 +27,7 @@ pub fn as_cli() -> Result<()> {
         stdout,
         stderr,
     } = Command::new("git")
-        .args(&["commit", "-m", &commit_message])
+        .args(["commit", "-m", &commit_message])
         .output()
         .expect("Failed run git commit");
 
