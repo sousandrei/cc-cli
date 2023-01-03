@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.4](https://github.com/sousandrei/cc-cli/compare/v0.1.3...v0.1.4) (2023-01-03)
+
+
+### Bug Fixes
+
+* **lint:** cargo clippy ([#25](https://github.com/sousandrei/cc-cli/issues/25)) ([30a9ea1](https://github.com/sousandrei/cc-cli/commit/30a9ea19d48cae16412b3e988969480bdd2779eb))
+
 ## [0.1.3](https://github.com/sousandrei/cc-cli/compare/v0.1.2...v0.1.3) (2022-09-17)
 
 
