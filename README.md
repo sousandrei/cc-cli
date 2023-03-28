@@ -2,7 +2,7 @@
 
 **Conventional Commits hook and cli**
 
-[![Build Status](https://img.shields.io/github/workflow/status/sousandrei/cc-cli/Main/main?style=flat-square)](https://github.com/sousandrei/cc-cli/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/sousandrei/cc-cli/main.yaml?branch=main)](https://github.com/sousandrei/cc-cli/actions)
 [![crates.io version](https://img.shields.io/crates/v/cc-cli.svg?style=flat-square)](https://crates.io/crates/cc-cli)
 
 <img src="./assets/example.gif" height="500" style="border-radius: 5px" />
