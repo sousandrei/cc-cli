@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.5](https://github.com/sousandrei/cc-cli/compare/v0.1.4...v0.1.5) (2023-03-28)
+
+
+### Miscellaneous Chores
+
+* release 0.1.5 ([7cfeb74](https://github.com/sousandrei/cc-cli/commit/7cfeb74eeaf43b077cb5cca3f646455cecfcc122))
+
 ## [0.1.4](https://github.com/sousandrei/cc-cli/compare/v0.1.3...v0.1.4) (2023-01-03)
 
 
