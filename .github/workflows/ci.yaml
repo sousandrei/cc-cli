@@ -3,8 +3,6 @@ name: Branches
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-    branches-ignore:
-      - "release-please-*"
 
   workflow_dispatch:
 
@@ -18,31 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions-rs/toolchain@v1
-        name: installing toolchain
-        with:
-          profile: default
-          toolchain: stable
-          override: true
-          components: rustfmt, clippy
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
 
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2.7.7
-
-      - uses: actions-rs/cargo@v1
-        name: fmt
-        with:
-          command: fmt
-          args: --all -- --check
-
-      - uses: actions-rs/cargo@v1
-        name: clippy
-        with:
-          command: clippy
-          args: --release -- -D warnings
-
-      - uses: actions-rs/cargo@v1
-        name: build
-        with:
-          command: build
-          args: --release
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --release -- -D warnings
+      - run: cargo build --release

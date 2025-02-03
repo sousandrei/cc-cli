@@ -8,51 +8,24 @@ on:
 env:
   CARGO_TERM_COLOR: always
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   main:
     runs-on: ubuntu-latest
 
-    permissions:
-      issues: write
-      contents: write
-      packages: write
-      pull-requests: write
-
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions-rs/toolchain@v1
-        name: Installing Rust Toolchain
-        with:
-          profile: default
-          toolchain: stable
-          override: true
-          components: rustfmt, clippy
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
 
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2.7.7
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --release -- -D warnings
+      - run: cargo build --release
 
-      - uses: actions-rs/cargo@v1
-        name: Cargo Fmt
+      - uses: googleapis/release-please-action@v4
         with:
-          command: fmt
-          args: --all -- --check
-
-      - uses: actions-rs/cargo@v1
-        name: Cargo Clippy
-        with:
-          command: clippy
-          args: --release -- -D warnings
-
-      - uses: actions-rs/cargo@v1
-        name: Cargo Build
-        with:
-          command: build
-          args: --release
-
-      - uses: google-github-actions/release-please-action@v4
-        name: Release
-        id: release
-        with:
+          token: ${{ secrets.RELEASE_PLEASE_PAT }}
           release-type: rust
-          package-name: cc-cli
