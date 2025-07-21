@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.7](https://github.com/sousandrei/cc-cli/compare/v0.1.6...v0.1.7) (2025-07-21)
+
+
+### Bug Fixes
+
+* **macos:** bump crossterm in inquire dependency ([18f60d4](https://github.com/sousandrei/cc-cli/commit/18f60d47f15c151ad9fe602ea686e578a674bfe3))
+
 ## [0.1.6](https://github.com/sousandrei/cc-cli/compare/v0.1.5...v0.1.6) (2025-02-03)
 
 
