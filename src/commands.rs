@@ -24,7 +24,7 @@ pub fn prompt() -> Result<String> {
         .prompt()?;
 
     if !scope.is_empty() {
-        scope = format!("({})", scope);
+        scope = format!("({scope})");
     }
 
     let is_breaking = match breaking_change {
@@ -32,7 +32,7 @@ pub fn prompt() -> Result<String> {
         false => "",
     };
 
-    let commit_message = format!("{}{}{}: {}", commit_type, scope, is_breaking, message);
+    let commit_message = format!("{commit_type}{scope}{is_breaking}: {message}");
 
     Ok(commit_message)
 }
