@@ -52,7 +52,7 @@ Or use it via cli with no parameters
 cc-cli
 ```
 
-To remote the hook, simply type
+To remove the hook, simply type
 
 ```
 cc-cli -r
