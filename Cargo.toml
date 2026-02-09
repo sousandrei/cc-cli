@@ -11,5 +11,5 @@ version = "0.1.7"
 
 [dependencies]
 anyhow = "1.0.100"
-argh = "0.1.13"
+argh = "0.1.14"
 inquire = { git = "https://github.com/sousandrei/inquire.git", rev = "02e5fd30" }
